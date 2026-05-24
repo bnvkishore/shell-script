@@ -5,3 +5,12 @@ echo "Number of vairables passed: $#"
 echo "First vairable: $1"
 echo "Script Name: $0"
 echo "Who is running this : $USER"
+echo "Which directory: $pwd"
+echo "Home director: $HOME"
+echo "PID of the current script: $$"
+sleep 5 &
+echo "PID of the background command running just now: $!"
+wait $!
+echo "Line number: $LINENO"
+echo "Script executed in $SECONDS seconds"
+echo "Random Number $RANDOM"
