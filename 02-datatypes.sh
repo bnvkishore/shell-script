@@ -7,7 +7,7 @@ sum=$(($num1+$num2))
 echo "total: $sum"
 
 # Array
-MOVIES = ("RRR" "Bahubali" "Pushpa")
+MOVIES=("RRR" "Bahubali" "Pushpa")
 
 echo "Movies are : ${MOVIES[@]}"
 echo "First movie: ${MOVIES[0]}"
