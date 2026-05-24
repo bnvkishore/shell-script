@@ -14,3 +14,8 @@ wait $!
 echo "Line number: $LINENO"
 echo "Script executed in $SECONDS seconds"
 echo "Random Number $RANDOM"
+
+## EXIT CODE
+## $? - previos command status (Success or not)
+## 0 -> Success
+## 1-127 -> failure
