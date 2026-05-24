@@ -19,7 +19,6 @@ VALIDATE() {
     dnf install $1 -y  &>> $LOGS_FILE
     if [ $2 -ne 0 ]; then
         echo "Installing $1 is ... FAILED"
-        exit 1
     else 
         echo "Installing $1 is ... SUCCESS"
     fi
