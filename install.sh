@@ -1,4 +1,4 @@
 #!/bin/bash
 
-sudo su
-echo "Currend user path : $PWD"
+# sudo su
+echo "Current user path : $PWD"
