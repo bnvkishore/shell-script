@@ -28,6 +28,7 @@ dnf list installed mysql &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "Mysql is already installed ... SKIPPING"
 else
+    dnf list installed mysql
     VALIDATE mysql $?
 fi
 
@@ -35,6 +36,7 @@ dnf list installed nginx  &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "nginx is already installed ... SKIPPING"
 else
+    dnf list installed nginx
     VALIDATE nginx $?
 fi
 
