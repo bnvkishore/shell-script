@@ -9,5 +9,7 @@ number=$1
 #le -> Less than or equal
 
 if [ $number -ge 20 ]; then
-    echo "Give number $number is grater than or equal to 20"
+    echo "Given number $number is grater than or equal to 20"
+else
+    echo "Given number $number is less than 20"
 fi
