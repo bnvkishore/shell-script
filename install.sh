@@ -21,10 +21,15 @@ VALIDATE() {
     fi
 }
 
-dnf list installed mysql
 if [ $? -eq 0 ]; then 
     echo "Mysql is already installed ... SKIPPING"
 else
     VALIDATE mysql $?
+fi
+
+if [ $? -eq 0 ]; then 
+    echo "nginx is already installed ... SKIPPING"
+else
+    VALIDATE nginx $?
 fi
 
