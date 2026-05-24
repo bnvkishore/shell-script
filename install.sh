@@ -10,4 +10,14 @@ if [ $USERID -ne 0 ]; then
     exit 1
 fi
 
-echo "I'm continuing"
+# echo "I'm continuing"
+
+echo "Installing mysql"
+dnf install mysql -y
+
+if [ $? -ne 0 ]; then
+    echo "Installing Mysql is failed..."
+    exit 1
+else 
+    echo "Installed successfylly"
+fi
