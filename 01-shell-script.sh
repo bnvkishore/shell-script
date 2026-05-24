@@ -19,3 +19,5 @@ echo "Random Number $RANDOM"
 ## $? - previos command status (Success or not)
 ## 0 -> Success
 ## 1-127 -> failure
+
+echo "Exit code of previous command: $?"
