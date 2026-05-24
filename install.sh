@@ -1,4 +1,10 @@
 #!/bin/bash
 
-cd sudo su
-echo "Current user path : $PWD"
+USERID=$(id -u)
+
+# Check root access or not
+if [ $USERID -ne 0 ]; then
+    echo "Please run this script with root access"
+fi
+
+echo "I'm continuing"
