@@ -26,7 +26,7 @@ if [ $? -eq 0 ]; then
     echo "Mysql is already installed ... SKIPPING"
 else
     echo "Installing MySQL"
-    dn install mysql -y &>> $LOGS_FILE
+    dnf install mysql -y &>> $LOGS_FILE
     VALIDATE mysql $?
 fi
 
@@ -35,7 +35,7 @@ if [ $? -eq 0 ]; then
     echo "nginx is already installed ... SKIPPING"
 else
     echo "Installing MySQL"
-    dn install mysql -y &>> $LOGS_FILE
+    dnf install mysql -y &>> $LOGS_FILE
     VALIDATE nginx $?
 fi
 
