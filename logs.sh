@@ -3,9 +3,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
-LOGS_DIR=/home/ec2-user/shell-logs
-LOGS_FILE="$LOGS_DIR/$0.log"  #/home/ec2-user/logs.sh.log
-
+LOGS_DIR=/var/log/shell-script
 # Check root access or not
 if [ $USERID -ne 0 ]; then
     echo "Please run this script with root access"
@@ -28,7 +26,6 @@ dnf list installed mysql &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "Mysql is already installed ... SKIPPING"
 else
-    dnf list installed mysql
     VALIDATE mysql $?
 fi
 
@@ -36,7 +33,6 @@ dnf list installed nginx  &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "nginx is already installed ... SKIPPING"
 else
-    dnf list installed nginx
     VALIDATE nginx $?
 fi
 
