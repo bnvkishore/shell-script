@@ -13,8 +13,6 @@ fi
 # first arg -> what are you trying to install 
 # second arg -> Exit code
 VALIDATE() {
-    echo "Installing $1"
-    dnf install $1 -y  &>> $LOGS_FILE
     if [ $2 -ne 0 ]; then
         echo "Installing $1 is ... FAILED"
     else 
@@ -26,6 +24,8 @@ dnf list installed mysql &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "Mysql is already installed ... SKIPPING"
 else
+    echo "Installing MySQL"
+    dn install mysql -y &>> $LOGS_FILE
     VALIDATE mysql $?
 fi
 
@@ -33,6 +33,8 @@ dnf list installed nginx  &>> $LOGS_FILE
 if [ $? -eq 0 ]; then 
     echo "nginx is already installed ... SKIPPING"
 else
+    echo "Installing MySQL"
+    dn install mysql -y &>> $LOGS_FILE
     VALIDATE nginx $?
 fi
 
