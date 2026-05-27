@@ -36,5 +36,6 @@ do
         VALIDATE "Installing $package" $?
     else
         echo "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $n"
+    fi
 done
 
