@@ -4,10 +4,10 @@ USERID=$(id -u)
 LOGS_DIR=/var/log/shell-script
 LOGS_FILE="$LOGS_DIR/$0.log"
 TIMESTAMP=$(date "+%y-%m-%d %H:%M:%S")
-R="/e[31m"
-G="/e[32m"
-Y="/e[33m"
-N="/e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 #check root access or not
 
@@ -33,9 +33,9 @@ do
     dnf list installed $package &>> $LOGS_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>> $LOGS_FILE
-        VALIDATE "Installing $package" $?
+        VALIDATE $package $?
     else
-        echo "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $n"
+        echo -e "$TIMESTAMP [INFO] $package already installed ... $Y SKIPPING $N"
     fi
 done
 
