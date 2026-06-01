@@ -3,6 +3,7 @@
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
+TIMESTAMP=$(date "+Y-%m-%d-%H-%M-%S")
 
 if [ -z "$SOURCE_DIR" ] || [ -z "$DEST_DIR" ]; then
     echo "Either source directory or destination directory is empty"
@@ -31,3 +32,7 @@ while IFS= read -r FILE
 do
     echo $FILE
 done <<< $FILES
+
+ARCHIEVE_FILE="$DEST_DIR/logs-archieve-$TIMESTAMP.tar.gz"
+
+tar -czvf $ARCHIEVE_FILE $FILES
