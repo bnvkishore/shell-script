@@ -35,4 +35,4 @@ done <<< $FILES
 
 ARCHIEVE_FILE="$DEST_DIR/logs-archieve-$TIMESTAMP.tar.gz"
 
-tar -czvf $ARCHIEVE_FILE $FILES
+tar -czvf $ARCHIEVE_FILE $FILES &> /dev/null
