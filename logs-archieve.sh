@@ -3,7 +3,7 @@
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14}
-TIMESTAMP=$(date "+Y-%m-%d-%H-%M-%S")
+TIMESTAMP=$(date "+%Y-%m-%d-%H-%M-%S")
 
 if [ -z "$SOURCE_DIR" ] || [ -z "$DEST_DIR" ]; then
     echo "Either source directory or destination directory is empty"
